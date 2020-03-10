@@ -48,4 +48,19 @@ public class MatrixCheck {
                 array[c] = board[c][c];
         return array;
     }
+
+    /**
+     * Проверка на выигрышную позицию в игре сокобан
+     * @param board матрица
+     * @return true - победа, false - нет
+     */
+    public static boolean isWin(char[][] board) {
+        char[] diagArr = extractDiagonal(board);
+            for (int c = 0; c < diagArr.length; c++) {
+                if (diagArr[c] == 'X')
+                    if (monoHorizontal(board, c) || monoVertical(board, c))
+                        return true;
+            }
+        return false;
+    }
 }
