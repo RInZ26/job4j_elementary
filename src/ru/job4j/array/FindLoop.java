@@ -4,7 +4,7 @@ package ru.job4j.array;
  * @Class Класс для поиска в массивах
  * @author RinZ25
  * @since 10.03.2020
- * @version 1
+ * @version 2
  */
 public class FindLoop {
     /**
@@ -35,5 +35,21 @@ public class FindLoop {
                 if (data[c] == el)
                     return c;
         return -1;
+    }
+
+    /**
+     * Сортировка выборкой
+     * @param data исходный массив
+     * @return отсортированный массив (исходный)
+     */
+    public static int[] sort(int[] data){
+            for (int i = 0; i < data.length; i++) {
+                int temp = data[i];
+                int min = MinDiapason.findMin(data, i, data.length - 1);
+                int index = indexOf(data, min, i, data.length - 1);
+                data[i] = min;
+                data[index] = temp;
+            }
+        return data;
     }
 }

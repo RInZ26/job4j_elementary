@@ -56,4 +56,21 @@ public class FindLoopTest {
         int expected = -2;
         Assert.assertThat(result, Is.is(expected));
     }
+
+    @Test
+    public void whenSort() {
+        int[] input = new int[] {3, 4, 1, 2, 5};
+        int[] actual = FindLoop.sort(input);
+        int[] expected = new int[] {1, 2, 3, 4, 5};
+        Assert.assertThat(actual, Is.is(expected));
+    }
+
+    @Test
+    public void whenSort3Numbers() {
+        int[] input = new int[] {1, 0, 0};
+        int[] actual = FindLoop.sort(input);
+        int[] expected = new int[] {0, 0, 1};
+        Assert.assertThat(actual, Is.is(expected));
+    }
+
 }
