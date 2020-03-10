@@ -36,4 +36,16 @@ public class MatrixCheck {
                     return false;
         return true;
     }
+
+    /**
+     * Извлечение диагонали у матрицы
+     * @param board заданная матрица
+     * @return массив равный диагонали board
+     */
+    public static char[] extractDiagonal(char[][] board) {
+        char[] array = new char[board[0].length];
+            for (int c = 0; c < board[0].length; c++)
+                array[c] = board[c][c];
+        return array;
+    }
 }
