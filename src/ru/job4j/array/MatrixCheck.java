@@ -21,4 +21,19 @@ public class MatrixCheck {
                     return false;
         return true;
     }
+
+    /**
+     * Столбец в двухмерном массиве целиком заполнен символом 'X'
+     * @param board проверяемая матрица
+     * @param column проверяемый столбец в board
+     * @return true - столбец заполнен нужным символом, false - нет / некорректные данные
+     */
+    public static boolean monoVertical(char[][] board, int column) {
+            if (column > board[0].length)
+                return false;
+            for (int c = 0; c < board.length; c++)
+                if (board[c][column] != 'X')
+                    return false;
+        return true;
+    }
 }
