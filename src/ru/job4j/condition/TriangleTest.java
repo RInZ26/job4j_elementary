@@ -14,8 +14,8 @@ public class TriangleTest {
     }
 
     @Test
-    public void whenDoesntExist(){
-        boolean actual = Triangle.exist(3,3,10);
+    public void whenDoesntExist() {
+        boolean actual = Triangle.exist(3, 3, 10);
         boolean expected = false;
         assertThat(actual, is(expected));
     }

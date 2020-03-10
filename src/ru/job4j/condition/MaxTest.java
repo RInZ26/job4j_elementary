@@ -12,7 +12,7 @@ public class MaxTest {
     }
 
     @Test
-    public void whenMaxFirst(){
+    public void whenMaxFirst() {
         int first = 4, second = 2;
         int actual = Max.max(first, second);
         int expected = first;
@@ -20,7 +20,7 @@ public class MaxTest {
     }
 
     @Test
-    public void whenMaxSecond(){
+    public void whenMaxSecond() {
         int first = 2, second = 4;
         int actual = Max.max(first, second);
         int expected = second;
@@ -28,7 +28,7 @@ public class MaxTest {
     }
 
     @Test
-    public void whenBothEquals(){
+    public void whenBothEquals() {
         int first = 4, second = 4;
         int actual = Max.max(first, second);
         int expected = second;

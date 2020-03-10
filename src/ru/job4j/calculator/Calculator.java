@@ -27,7 +27,7 @@ public class Calculator {
      * @param second второй аргумент
      * @return результат
     */
-    public static double add (double first, double second){
+    public static double add(double first, double second) {
         return first + second;
     }
 }

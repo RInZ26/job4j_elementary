@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
 /**
- * @Class Класс для проверок матриц!
+ * Класс для проверок матриц!
  * @author RinZ26
  * @since 10.03.2020
  * @version 1
@@ -14,11 +14,14 @@ public class MatrixCheck {
      * @return true - строка заполнена нужным символом, false - нет / некорректные данные
      */
     public static boolean monoHorizontal(char[][] board, int row) {
-            if (row > board.length)
+            if (row > board.length) {
                 return false;
-            for (int c = 0; c < board[0].length; c++)
-                if (board[row][c] != 'X')
+            }
+            for (int c = 0; c < board[0].length; c++) {
+                if (board[row][c] != 'X') {
                     return false;
+                }
+            }
         return true;
     }
 
@@ -29,11 +32,14 @@ public class MatrixCheck {
      * @return true - столбец заполнен нужным символом, false - нет / некорректные данные
      */
     public static boolean monoVertical(char[][] board, int column) {
-            if (column > board[0].length)
+            if (column > board[0].length) {
                 return false;
-            for (int c = 0; c < board.length; c++)
-                if (board[c][column] != 'X')
-                    return false;
+            }
+        for (char[] chars : board) {
+            if (chars[column] != 'X') {
+                return false;
+            }
+        }
         return true;
     }
 
@@ -44,8 +50,9 @@ public class MatrixCheck {
      */
     public static char[] extractDiagonal(char[][] board) {
         char[] array = new char[board[0].length];
-            for (int c = 0; c < board[0].length; c++)
+            for (int c = 0; c < board[0].length; c++) {
                 array[c] = board[c][c];
+            }
         return array;
     }
 
@@ -57,9 +64,11 @@ public class MatrixCheck {
     public static boolean isWin(char[][] board) {
         char[] diagArr = extractDiagonal(board);
             for (int c = 0; c < diagArr.length; c++) {
-                if (diagArr[c] == 'X')
-                    if (monoHorizontal(board, c) || monoVertical(board, c))
+                if (diagArr[c] == 'X') {
+                    if (monoHorizontal(board, c) || monoVertical(board, c)) {
                         return true;
+                    }
+                }
             }
         return false;
     }

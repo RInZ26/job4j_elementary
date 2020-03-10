@@ -10,10 +10,11 @@ public class Slash {
      * Отрисовка.
      * @param size размер квадрата, в котором будет нарисован крестик
     * */
-    public static void draw(int size){
+    public static void draw(int size) {
         for (int row = 0; row < size; row++) {
-                for (int ceil = 0; ceil < size; ceil++)
-                    System.out.print( (row == ceil || ceil == (size - 1) - row) ? '0' : ' ');
+                for (int ceil = 0; ceil < size; ceil++) {
+                    System.out.print((row == ceil || ceil == (size - 1) - row) ? '0' : ' ');
+                }
             System.out.println();
         }
     }

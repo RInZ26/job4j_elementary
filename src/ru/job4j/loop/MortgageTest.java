@@ -21,7 +21,7 @@ public class MortgageTest {
     }
 
     @Test
-    public void whenPercentIsInsane(){
+    public void whenPercentIsInsane() {
         Mortgage mortgage = new Mortgage();
         int expected = 999;
         int actual = mortgage.getCountOfYears(100, 100, 100);

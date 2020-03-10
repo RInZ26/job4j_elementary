@@ -6,28 +6,28 @@ import org.hamcrest.core.Is.*;
 import org.junit.Assert;
 public class FactorialTest {
     @Test
-    public void calcFactorialPositive(){
+    public void calcFactorialPositive() {
         int expected = 120;
         int actual = Factorial.calcFactorial(5);
         Assert.assertThat(actual, Is.is(expected));
     }
 
     @Test
-    public void calcFactorialOne(){
+    public void calcFactorialOne() {
         int expected = 1;
         int actual = Factorial.calcFactorial(1);
         Assert.assertThat(actual, Is.is(expected));
     }
 
     @Test
-    public void calcFactorialZero(){
+    public void calcFactorialZero() {
         int expected  = 1;
         int actual = Factorial.calcFactorial(0);
         Assert.assertThat(actual, Is.is(expected));
     }
 
     @Test
-    public void calcFactorialNegative(){
+    public void calcFactorialNegative() {
         int expected = -1;
         int actual = Factorial.calcFactorial(-100);
         Assert.assertThat(actual, Is.is(expected));
