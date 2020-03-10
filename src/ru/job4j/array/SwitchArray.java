@@ -9,7 +9,17 @@ public class SwitchArray {
         return array;
     }
 
-    public static void main(String[] args) {
+    public static int[] swap(int[] array, int source, int dest) {
+            if (source < 0 || dest < 0 || source > array.length || dest > array.length)
+                return null;
+        int temp = array[dest];
+        array[dest] = array[source];
+        array[source] = temp;
+        return array;
+    }
+
+
+        public static void main(String[] args) {
         int[] nums = new int[] {1, 2, 3, 4, 5, 6};
         int[] rsl = swapBorder(nums);
         for (int index = 0; index < rsl.length; index++) {
