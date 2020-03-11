@@ -4,25 +4,24 @@ package ru.job4j.array;
  * Класс для проверок матриц!
  * @author RinZ26
  * @since 10.03.2020
- * @version 1
+ * @version 2
  */
 public class MatrixCheck {
     /**
      * Строка в дмухмерном массиве целиком заполнена символом 'X'
      * @param board проверяемая матрица
      * @param row проверяемая строка в board
-     * @return true - строка заполнена нужным символом, false - нет / некорректные данные
+     * @return true - строка заполнена нужным символом, false - нет
      */
     public static boolean monoHorizontal(char[][] board, int row) {
-            if (row > board.length) {
-                return false;
-            }
-            for (int c = 0; c < board[0].length; c++) {
+        boolean isRight = true;
+            for (int c = 0; c < row; c++) {
                 if (board[row][c] != 'X') {
-                    return false;
+                    isRight = false;
+                    break;
                 }
             }
-        return true;
+        return isRight;
     }
 
     /**
