@@ -4,7 +4,7 @@ package ru.job4j.array;
  * Класс для проверок матриц!
  * @author RinZ26
  * @since 10.03.2020
- * @version 2
+ * @version 3
  */
 public class MatrixCheck {
     /**
@@ -28,18 +28,17 @@ public class MatrixCheck {
      * Столбец в двухмерном массиве целиком заполнен символом 'X'
      * @param board проверяемая матрица
      * @param column проверяемый столбец в board
-     * @return true - столбец заполнен нужным символом, false - нет / некорректные данные
+     * @return true - столбец заполнен нужным символом, false - нет
      */
     public static boolean monoVertical(char[][] board, int column) {
-            if (column > board[0].length) {
-                return false;
+        boolean isRight = true;
+            for (char[] chars : board) {
+                if (chars[column] != 'X') {
+                    isRight = false;
+                    break;
+                }
             }
-        for (char[] chars : board) {
-            if (chars[column] != 'X') {
-                return false;
-            }
-        }
-        return true;
+        return isRight;
     }
 
     /**
