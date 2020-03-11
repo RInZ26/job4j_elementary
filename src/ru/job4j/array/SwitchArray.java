@@ -10,9 +10,6 @@ public class SwitchArray {
     }
 
     public static int[] swap(int[] array, int source, int dest) {
-            if (source < 0 || dest < 0 || source > array.length || dest > array.length) {
-                return null;
-            }
         int temp = array[dest];
         array[dest] = array[source];
         array[source] = temp;
