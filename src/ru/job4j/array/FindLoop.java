@@ -4,7 +4,7 @@ package ru.job4j.array;
  * Класс для поиска в массивах
  * @author RinZ25
  * @since 10.03.2020
- * @version 2
+ * @version 3
  */
 public class FindLoop {
     /**
@@ -14,12 +14,14 @@ public class FindLoop {
      @return результат индекс - элемент есть /   -1 - элемента нет
      */
     public int indexOf(int[] data, int el) {
-        for (int c = 0; c < data.length; c++) {
-            if (data[c] == el) {
-                return c;
+        int index = -1;
+            for (int c = 0; c < data.length; c++) {
+                if (data[c] == el) {
+                    index = c;
+                    break;
+                }
             }
-        }
-        return -1;
+        return index;
     }
 
     /**
@@ -28,18 +30,17 @@ public class FindLoop {
      * @param el элемент, индекс которого ищется
      * @param start начало диапазона поиска
      * @param finish конец диапазона поиска
-     * @return индекс - элемент есть, -1  - элемента нет в данном диапазоне, -2 - неверно заданы границы отрезка
+     * @return индекс - элемент есть, -1  - элемента нет в данном диапазоне
      */
     public static int indexOf(int[] data, int el, int start, int finish) {
-            if (finish < start || start > data.length || finish > data.length || start < 0 || finish < 0) {
-                return -2;
-            }
+        int index = -1;
             for (int c = start; c <= finish; c++) {
                 if (data[c] == el) {
-                    return c;
+                    index = c;
+                    break;
                 }
             }
-        return -1;
+        return index;
     }
 
     /**
