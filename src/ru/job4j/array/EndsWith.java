@@ -14,14 +14,13 @@ public class EndsWith {
      * @return true - совпало, false - нет / длина постфикса больше чем слова
      */
     public static boolean endsWith(char[] word, char[] post) {
-            if (post.length > word.length) {
-                return false;
-            }
+        boolean isRight = true;
             for (int c = 0; c < post.length; c++) {
                 if (word[word.length - 1 - c] != post[post.length - 1 - c]) {
-                    return false;
+                    isRight = false;
+                    break;
                 }
             }
-        return true;
+        return isRight;
     }
 }
