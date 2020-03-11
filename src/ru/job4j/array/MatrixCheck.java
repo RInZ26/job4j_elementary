@@ -4,7 +4,7 @@ package ru.job4j.array;
  * Класс для проверок матриц!
  * @author RinZ26
  * @since 10.03.2020
- * @version 3
+ * @version 4
  */
 public class MatrixCheck {
     /**
@@ -61,13 +61,15 @@ public class MatrixCheck {
      */
     public static boolean isWin(char[][] board) {
         char[] diagArr = extractDiagonal(board);
+        boolean isRight = false;
             for (int c = 0; c < diagArr.length; c++) {
                 if (diagArr[c] == 'X') {
                     if (monoHorizontal(board, c) || monoVertical(board, c)) {
-                        return true;
+                        isRight = true;
+                        break;
                     }
                 }
             }
-        return false;
+        return isRight;
     }
 }
