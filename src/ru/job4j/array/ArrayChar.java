@@ -14,14 +14,13 @@ public class ArrayChar {
      * @return true - совпало, false - нет / префикс длиннее слова
      */
     public static boolean startsWith(char[] word, char[] pref) {
-            if (pref.length > word.length) {
-                return false;
-            }
+        boolean isRight = true;
             for (int c = 0; c < pref.length; c++) {
                 if (word[c] != pref[c]) {
-                    return false;
+                    isRight = false;
+                    break;
                 }
             }
-        return true;
+        return isRight;
     }
 }
