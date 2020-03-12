@@ -3,8 +3,6 @@ package ru.job4j.array;
 /**
  * Класс для заполнения массива элементами
  * @author RinZ26
- * @since 06.03.2020
- * @version 1
  */
 public class ArrayLoop {
     /**
