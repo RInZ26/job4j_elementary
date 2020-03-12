@@ -5,8 +5,7 @@ import java.util.Arrays;
 /**
  * Класс для работы с массивами
  * @author RinZ26
- * @since 11.03.2020
- * @version 1
+
  */
 public class Merge {
     /**
@@ -21,13 +20,13 @@ public class Merge {
             while (pointerLeft + pointerRight < array.length) {
                 if (pointerLeft < left.length && pointerRight < right.length) {
                     array[pointerLeft + pointerRight] = left[pointerLeft] <= right[pointerRight] ? left[pointerLeft++] : right[pointerRight++];
-                } else if (pointerLeft >= left.length && pointerRight < right.length) {
+                } else if (pointerLeft >= left.length) {
                     for (int i = pointerLeft  + pointerRight; i < array.length; i++) {
                         array[i] = right[pointerRight++];
                     }
-                } else if (pointerRight >= right.length && pointerLeft < left.length) {
+                } else if (pointerRight >= right.length) {
                     for (int i = pointerRight + pointerLeft; i < array.length; i++) {
-                        array[i] = right[pointerLeft++];
+                        array[i] = left[pointerLeft++];
                     }
                 }
             }
