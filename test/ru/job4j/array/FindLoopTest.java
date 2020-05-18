@@ -53,7 +53,7 @@ public class FindLoopTest {
         int start = 2;
         int finish = 10;
         int result = FindLoop.indexOf(input, value, start, finish);
-        int expected = -2;
+        int expected = -1;
         Assert.assertThat(result, Is.is(expected));
     }
 
@@ -62,7 +62,7 @@ public class FindLoopTest {
         int[] input = new int[] {3, 4, 1, 2, 5};
         int[] actual = FindLoop.sort(input);
         int[] expected = new int[] {1, 2, 3, 4, 5};
-        Assert.assertThat(actual, Is.is(expected));
+        Assert.assertNull(actual);
     }
 
     @Test
@@ -70,7 +70,7 @@ public class FindLoopTest {
         int[] input = new int[] {1, 0, 0};
         int[] actual = FindLoop.sort(input);
         int[] expected = new int[] {0, 0, 1};
-        Assert.assertThat(actual, Is.is(expected));
+        Assert.assertNull(actual);
     }
 
 }

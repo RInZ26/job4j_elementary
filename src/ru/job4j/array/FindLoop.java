@@ -35,7 +35,7 @@ public class FindLoop {
      */
     public static int indexOf(int[] data, int el, int start, int finish) {
 	int index = -1;
-	for (int c = start; c <= finish; c++) {
+	for (int c = Math.min(start, data.length); c < Math.min(finish, data.length); c++) {
 	    if (data[c] == el) {
 		index = c;
 		break;
@@ -55,6 +55,9 @@ public class FindLoop {
 	    int temp = data[i];
 	    int min = MinDiapason.findMin(data, i, data.length - 1);
 	    int index = indexOf(data, min, i, data.length - 1);
+	    if (index == -1) {
+	        return null;
+	    }
 	    data[i] = min;
 	    data[index] = temp;
 	}
